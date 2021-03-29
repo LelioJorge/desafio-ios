@@ -99,12 +99,14 @@
 		DCC310C626120A890018A4BB /* desafio_ios */ = {
 			isa = PBXGroup;
 			children = (
+				DCC310FF26120FD60018A4BB /* Common */,
+				DCC310FE26120FCE0018A4BB /* Service */,
+				DCC310FD26120FC50018A4BB /* Model */,
+				DCC310FC26120FB50018A4BB /* ViewModel */,
+				DCC310FB26120FAA0018A4BB /* View */,
 				DCC310C726120A890018A4BB /* AppDelegate.swift */,
 				DCC310C926120A890018A4BB /* SceneDelegate.swift */,
-				DCC310CB26120A890018A4BB /* ViewController.swift */,
-				DCC310CD26120A890018A4BB /* Main.storyboard */,
 				DCC310D026120A8A0018A4BB /* Assets.xcassets */,
-				DCC310D226120A8A0018A4BB /* LaunchScreen.storyboard */,
 				DCC310D526120A8A0018A4BB /* Info.plist */,
 			);
 			path = desafio_ios;
@@ -126,6 +128,52 @@
 				DCC310EB26120A8A0018A4BB /* Info.plist */,
 			);
 			path = desafio_iosUITests;
+			sourceTree = "<group>";
+		};
+		DCC310FB26120FAA0018A4BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCC310CB26120A890018A4BB /* ViewController.swift */,
+				DCC3110026124D710018A4BB /* StoryBoards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCC310FC26120FB50018A4BB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DCC310FD26120FC50018A4BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DCC310FE26120FCE0018A4BB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DCC310FF26120FD60018A4BB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DCC3110026124D710018A4BB /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				DCC310CD26120A890018A4BB /* Main.storyboard */,
+				DCC310D226120A8A0018A4BB /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
