@@ -17,11 +17,11 @@ class NasaAPI {
         self.manager = manager
     }
         
-    func getNasa(handler: @escaping (Nasa) -> Void, completion: @escaping (Error) -> Void) {
-        manager.request(url: url, method: .get, parameters: [:], headers: [:]) { (response) in
+    func getNasa(parameters: [String: String], handler: @escaping ([Nasa]) -> Void, completion: @escaping (Error) -> Void) {
+        manager.request(url: url, method: .get, parameters: parameters, headers: [:]) { (response) in
             switch response {
             case let .success(data):
-                let nasa = try! JSONDecoder().decode(Nasa.self, from: data)
+                let nasa = try! JSONDecoder().decode([Nasa].self, from: data)
                 handler(nasa)
             case let .failure(error):
                 completion(error)

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		28BABE1C21F9B43B22045B1E /* Pods_desafio_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4750EAD8E36F7C53BAC1DB4F /* Pods_desafio_iosTests.framework */; };
 		358B9AA9A4955F620E810AB1 /* Pods_desafio_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28C271430386C5A05EE740D /* Pods_desafio_ios.framework */; };
+		DC245F5D2613ABCD00ECB690 /* DownloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC245F5C2613ABCD00ECB690 /* DownloadTests.swift */; };
+		DC245F622613B61A00ECB690 /* NasaViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC245F612613B61A00ECB690 /* NasaViewModelTests.swift */; };
 		DC2B791526126DD700A3F0E9 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B791426126DD700A3F0E9 /* RequestManager.swift */; };
 		DC2B791A2612762800A3F0E9 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B79192612762800A3F0E9 /* AlamofireManager.swift */; };
 		DC754A5C26127C880053A278 /* Nasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC754A5B26127C880053A278 /* Nasa.swift */; };
@@ -52,6 +54,8 @@
 		AC469C95B5C60971E5B386C8 /* Pods-desafio_ios-desafio_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio_ios-desafio_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-desafio_ios-desafio_iosUITests/Pods-desafio_ios-desafio_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF879597D813EEB494762C0F /* Pods-desafio_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio_ios.release.xcconfig"; path = "Target Support Files/Pods-desafio_ios/Pods-desafio_ios.release.xcconfig"; sourceTree = "<group>"; };
 		B018D0D7ADD9E1C30B3F0F6F /* Pods_desafio_ios_desafio_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafio_ios_desafio_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC245F5C2613ABCD00ECB690 /* DownloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTests.swift; sourceTree = "<group>"; };
+		DC245F612613B61A00ECB690 /* NasaViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaViewModelTests.swift; sourceTree = "<group>"; };
 		DC2B791426126DD700A3F0E9 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		DC2B79192612762800A3F0E9 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		DC754A5B26127C880053A278 /* Nasa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nasa.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 			children = (
 				DCC310DE26120A8A0018A4BB /* desafio_iosTests.swift */,
 				DCC310E026120A8A0018A4BB /* Info.plist */,
+				DC245F5C2613ABCD00ECB690 /* DownloadTests.swift */,
+				DC245F612613B61A00ECB690 /* NasaViewModelTests.swift */,
 			);
 			path = desafio_iosTests;
 			sourceTree = "<group>";
@@ -497,6 +503,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC310DF26120A8A0018A4BB /* desafio_iosTests.swift in Sources */,
+				DC245F5D2613ABCD00ECB690 /* DownloadTests.swift in Sources */,
+				DC245F622613B61A00ECB690 /* NasaViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

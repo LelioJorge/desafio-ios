@@ -12,6 +12,20 @@ protocol RequestManager {
     func request(url: URL, method: HTTPMethods, parameters: [String : Any], headers: [String : String], completion: @escaping (Result<Data, Error>) -> Void) -> Void
 }
 
+enum Parameters {
+    case startDate
+    case endDate
+    
+    var value: String {
+        switch self {
+        case .startDate:
+            return "start_date"
+        case .endDate:
+            return "end_date"
+        }
+    }
+}
+
 enum ServiceError: Error{
     case apiError
     
