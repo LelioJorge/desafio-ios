@@ -37,24 +37,21 @@ class NasaViewModel {
 
     
     func getImage(nasa: Nasa, index: Int, completion: @escaping (UIImage) -> Void) -> Void {
-//        dispathGroup.enter()
+        
         guard let image = imageCache.object(forKey: String(index) as NSString) else {
-            guard let url = URL(string: nasa.url) else {
-//                dispathGroup.leave()
-                return }
+            guard let url = URL(string: nasa.url) else { return }
+            dispathGroup.enter()
             imageAPI.getImage(url: url) { [self] (image) in
-                guard let image = image else {
-//                    dispathGroup.leave()
-                    return }
+                defer { dispathGroup.leave() }
+                guard let image = image else { return }
                 imageCache.setObject(image, forKey: String(index) as NSString as NSString)
-//                dispathGroup.leave()
                 completion(image)
             }
+       
             return
         }
         
         completion(image)
-//        dispathGroup.leave()
     }
     
      func getNasa(completion: @escaping ([Nasa]) -> Void) {

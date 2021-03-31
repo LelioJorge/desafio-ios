@@ -28,7 +28,7 @@ class NasaCell: UICollectionViewCell {
    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.backgroundColor = .lightGray
     }
 
     required init?(coder aDecoder: NSCoder) {
