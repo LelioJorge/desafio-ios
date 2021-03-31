@@ -12,13 +12,12 @@ class NasaViewModel {
     
     private var manager: RequestManager
     private let imageCache = NSCache<NSString, UIImage>()
-    private var nasaInformations: [Nasa] = []
-    
     private var startDate: Date = Date()
     private var endDate: Date = Date()
     private var finalyDate: Date = Date()
     private var dispathGroup = DispatchGroup()
     private var monthCurrent: Int = 1
+    
     lazy var nasaAPI: NasaAPI = {
         NasaAPI(manager: manager)
     }()
@@ -37,64 +36,63 @@ class NasaViewModel {
     
 
     
-    func getImage(nasa: Nasa, completion: @escaping (UIImage) -> Void) -> Void {
-        
-        guard let image = imageCache.object(forKey: nasa.title as NSString) else {
-            imageAPI.getImage(url: URL(string: nasa.url)!) { [self] (image) in
-                imageCache.setObject(image!, forKey: nasa.title as NSString)
-                completion(image!)
+    func getImage(nasa: Nasa, index: Int, completion: @escaping (UIImage) -> Void) -> Void {
+//        dispathGroup.enter()
+        guard let image = imageCache.object(forKey: String(index) as NSString) else {
+            guard let url = URL(string: nasa.url) else {
+//                dispathGroup.leave()
+                return }
+            imageAPI.getImage(url: url) { [self] (image) in
+                guard let image = image else {
+//                    dispathGroup.leave()
+                    return }
+                imageCache.setObject(image, forKey: String(index) as NSString as NSString)
+//                dispathGroup.leave()
+                completion(image)
             }
             return
         }
         
         completion(image)
-        
+//        dispathGroup.leave()
     }
     
-    func getNasa(completion: @escaping (Nasa) -> Void) -> Void {
-        
-        guard let nasa = nasaInformations.first else {
-            loadNasa { [self] in
-                guard let nasa = nasaInformations.first else {return}
-                nasaInformations.removeFirst()
-                completion(nasa)
-            }
-            return
-        }
-        nasaInformations.removeFirst()
-        completion(nasa)
-        
-    }
-    
-    private func loadNasa(completion: @escaping () -> Void) {
-        dispathGroup.enter()
+     func getNasa(completion: @escaping ([Nasa]) -> Void) {
+//        dispathGroup.enter()
  
         if startDate < finalyDate {
             resetDate()
         }
-        let parameters = [Parameters.startDate.value: dateToString(date: startDate),
-                          Parameters.endDate.value : dateToString(date: endDate)]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        print(startDate)
+        print(endDate)
+        print(dateFormatter.string(from: startDate))
+        print(dateFormatter.string(from: endDate))
+        
+
+        
+        let parameters = [Parameters.startDate.value: dateFormatter.string(from: startDate),
+                          Parameters.endDate.value : dateFormatter.string(from: endDate)]
         
         nasaAPI.getNasa(parameters: parameters) { [weak self] response in
-            self?.nasaInformations.append(contentsOf: response)
-            self?.dispathGroup.leave()
+//            self?.dispathGroup.leave()
             self?.decreceDate()
-            completion()
+            completion(response)
         } completion: { (error) in
             debugPrint(error)
-            self.dispathGroup.leave()
+//            self.dispathGroup.leave()
         }
     }
-    
-
 }
 
 extension NasaViewModel {
     
     private func resetDate() {
-        self.startDate = getDateFor(month: -2)!
-        self.endDate = getDateFor(month: -1)!
         monthCurrent = 1
+        self.startDate = getDateFor(month: -(monthCurrent + 1))!
+        self.endDate = getDateFor(month: -monthCurrent)!
+  
     }
     
     private func decreceDate() {
