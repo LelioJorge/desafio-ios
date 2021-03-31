@@ -36,15 +36,15 @@ class NasaViewModel {
     
 
     
-    func getImage(nasa: Nasa, index: Int, completion: @escaping (UIImage) -> Void) -> Void {
+    func getImage(nasa: Nasa, completion: @escaping (UIImage) -> Void) -> Void {
         
-        guard let image = imageCache.object(forKey: String(index) as NSString) else {
+        guard let image = imageCache.object(forKey: nasa.url as NSString) else {
             guard let url = URL(string: nasa.url) else { return }
             dispathGroup.enter()
             imageAPI.getImage(url: url) { [self] (image) in
                 defer { dispathGroup.leave() }
                 guard let image = image else { return }
-                imageCache.setObject(image, forKey: String(index) as NSString as NSString)
+                imageCache.setObject(image, forKey: nasa.url as NSString as NSString)
                 completion(image)
             }
        
@@ -54,21 +54,19 @@ class NasaViewModel {
         completion(image)
     }
     
+    func finishDownload(by url: String) {
+        guard let url = URL(string: url) else { return }
+        imageAPI.stopRequest(by: url)
+    }
+    
      func getNasa(completion: @escaping ([Nasa]) -> Void) {
-//        dispathGroup.enter()
  
         if startDate < finalyDate {
             resetDate()
         }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        print(startDate)
-        print(endDate)
-        print(dateFormatter.string(from: startDate))
-        print(dateFormatter.string(from: endDate))
-        
-
-        
+ 
         let parameters = [Parameters.startDate.value: dateFormatter.string(from: startDate),
                           Parameters.endDate.value : dateFormatter.string(from: endDate)]
         

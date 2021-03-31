@@ -51,7 +51,8 @@ class NasaViewModelTests: XCTestCase {
             debugPrint(nasa)
             XCTAssertNotNil(nasa)
             expectation.fulfill()
-            vm.getImage(nasa: nasa2) { (image) in
+            
+            vm.getImage(nasa: nasa2.first!) { (image) in
                 debugPrint(image)
                 XCTAssertNotNil(image)
                 expectation2.fulfill()

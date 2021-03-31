@@ -11,13 +11,14 @@ import Alamofire
 class ImageAPI {
     
     var manager: RequestManager
+    var task: DataRequest?
     
     init(manager: RequestManager) {
         self.manager = manager
     }
         
     func getImage(url: URL, completion: @escaping (UIImage?) -> Void) {
-        manager.request(url: url, method: .get, parameters: [:], headers: [:]) { (response) in
+        let task = manager.request(url: url, method: .get, parameters: [:], headers: [:]) { (response) in
             switch response {
             case let .success(data):
                 completion(UIImage(data: data))
@@ -25,5 +26,10 @@ class ImageAPI {
                 break
             }
         }
+        self.task = task
+    }
+    
+    func stopRequest(by url: URL) {
+        manager.cancelTask(byUrl: url)
     }
 }

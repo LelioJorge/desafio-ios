@@ -47,10 +47,7 @@ class NasaViewController: UIViewController {
 
 }
 
-// MARK: - Delegate
-extension NasaViewController: UICollectionViewDelegate {
-    
-}
+
 // MARK: - DataSource
 extension NasaViewController: UICollectionViewDataSource {
     
@@ -61,16 +58,19 @@ extension NasaViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NasaCell.identifier, for: indexPath) as! NasaCell
         cell.downloadImage = {
-            self.viewModel.getImage(nasa: self.nasa[indexPath.row], index: indexPath.row, completion: { (image) in
+            self.viewModel.getImage(nasa: self.nasa[indexPath.row], completion: { (image) in
                 cell.populate(with: image)
             })
+        }
+        cell.stopDownloadImage = {
+            self.viewModel.finishDownload(by: self.nasa[indexPath.row].url)
         }
         cell.nasa = self.nasa[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-         if (indexPath.row == nasa.count / 2) {
+         if (indexPath.row == nasa.count - 1) {
             viewModel.getNasa(completion: { [weak self] (response) in
                 self?.nasa.append(contentsOf: response)
                 self?.collectionView.reloadData()

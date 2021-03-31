@@ -25,7 +25,8 @@ class NasaCell: UICollectionViewCell {
         }
     }
     var downloadImage: (() -> ())?
-   
+    var stopDownloadImage: (() -> ())?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .lightGray
@@ -36,6 +37,7 @@ class NasaCell: UICollectionViewCell {
     }
     override func prepareForReuse() {
         imageView.image = nil
+        stopDownloadImage?()
     }
     func populate(with image: UIImage?){
         DispatchQueue.main.async {

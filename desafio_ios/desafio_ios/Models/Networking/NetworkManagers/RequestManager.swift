@@ -9,7 +9,10 @@ import Foundation
 import Alamofire
 
 protocol RequestManager {
-    func request(url: URL, method: HTTPMethods, parameters: [String : Any], headers: [String : String], completion: @escaping (Result<Data, Error>) -> Void) -> Void
+    @discardableResult
+    func request(url: URL, method: HTTPMethods, parameters: [String : Any], headers: [String : String], completion: @escaping (Result<Data, Error>) -> Void) -> DataRequest
+    
+    func cancelTask(byUrl url:URL) -> Void
 }
 
 enum Parameters {

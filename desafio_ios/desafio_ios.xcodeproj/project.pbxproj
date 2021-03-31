@@ -18,13 +18,13 @@
 		DC754A6126127FD70053A278 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC754A6026127FD70053A278 /* ImageAPI.swift */; };
 		DC754A66261287B50053A278 /* NasaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC754A65261287B50053A278 /* NasaViewModel.swift */; };
 		DC8DBAF92614BA7B00A9C154 /* NasaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DBAF82614BA7B00A9C154 /* NasaCell.swift */; };
+		DC8DE24F2615F0B500C944C9 /* ResquestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8DE24E2615F0B500C944C9 /* ResquestManagerTests.swift */; };
 		DCC310C826120A890018A4BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC310C726120A890018A4BB /* AppDelegate.swift */; };
 		DCC310CA26120A890018A4BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC310C926120A890018A4BB /* SceneDelegate.swift */; };
 		DCC310CC26120A890018A4BB /* NasaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC310CB26120A890018A4BB /* NasaViewController.swift */; };
 		DCC310CF26120A890018A4BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC310CD26120A890018A4BB /* Main.storyboard */; };
 		DCC310D126120A8A0018A4BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC310D026120A8A0018A4BB /* Assets.xcassets */; };
 		DCC310D426120A8A0018A4BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC310D226120A8A0018A4BB /* LaunchScreen.storyboard */; };
-		DCC310DF26120A8A0018A4BB /* desafio_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC310DE26120A8A0018A4BB /* desafio_iosTests.swift */; };
 		DCC310EA26120A8A0018A4BB /* desafio_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC310E926120A8A0018A4BB /* desafio_iosUITests.swift */; };
 		DCC31131261260920018A4BB /* NasaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC31130261260920018A4BB /* NasaAPI.swift */; };
 		EAF8560A05ADC978ADABD314 /* Pods_desafio_ios_desafio_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B018D0D7ADD9E1C30B3F0F6F /* Pods_desafio_ios_desafio_iosUITests.framework */; };
@@ -65,6 +65,7 @@
 		DC754A6026127FD70053A278 /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		DC754A65261287B50053A278 /* NasaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaViewModel.swift; sourceTree = "<group>"; };
 		DC8DBAF82614BA7B00A9C154 /* NasaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaCell.swift; sourceTree = "<group>"; };
+		DC8DE24E2615F0B500C944C9 /* ResquestManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResquestManagerTests.swift; sourceTree = "<group>"; };
 		DCC310C426120A890018A4BB /* desafio_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC310C726120A890018A4BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCC310C926120A890018A4BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		DCC310D326120A8A0018A4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC310D526120A8A0018A4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC310DA26120A8A0018A4BB /* desafio_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafio_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCC310DE26120A8A0018A4BB /* desafio_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_iosTests.swift; sourceTree = "<group>"; };
 		DCC310E026120A8A0018A4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC310E526120A8A0018A4BB /* desafio_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafio_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC310E926120A8A0018A4BB /* desafio_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_iosUITests.swift; sourceTree = "<group>"; };
@@ -143,6 +143,25 @@
 			path = NetworkManagers;
 			sourceTree = "<group>";
 		};
+		DC5B24622615F9D300AE0786 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC5B24632615FA1700AE0786 /* Nasa */,
+				DCC310FE26120FCE0018A4BB /* Networking */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DC5B24632615FA1700AE0786 /* Nasa */ = {
+			isa = PBXGroup;
+			children = (
+				DCC310FD26120FC50018A4BB /* Model */,
+				DCC310FB26120FAA0018A4BB /* View */,
+				DCC310FC26120FB50018A4BB /* ViewModel */,
+			);
+			path = Nasa;
+			sourceTree = "<group>";
+		};
 		DCC310BB26120A890018A4BB = {
 			isa = PBXGroup;
 			children = (
@@ -169,12 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				DCC310FF26120FD60018A4BB /* Common */,
-				DCC310FE26120FCE0018A4BB /* Networking */,
-				DCC310FD26120FC50018A4BB /* Model */,
-				DCC310FC26120FB50018A4BB /* ViewModel */,
-				DCC310FB26120FAA0018A4BB /* View */,
-				DCC310C726120A890018A4BB /* AppDelegate.swift */,
-				DCC310C926120A890018A4BB /* SceneDelegate.swift */,
+				DC5B24622615F9D300AE0786 /* Models */,
 				DCC310D026120A8A0018A4BB /* Assets.xcassets */,
 				DCC310D526120A8A0018A4BB /* Info.plist */,
 			);
@@ -184,10 +198,10 @@
 		DCC310DD26120A8A0018A4BB /* desafio_iosTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCC310DE26120A8A0018A4BB /* desafio_iosTests.swift */,
 				DCC310E026120A8A0018A4BB /* Info.plist */,
 				DC245F5C2613ABCD00ECB690 /* DownloadTests.swift */,
 				DC245F612613B61A00ECB690 /* NasaViewModelTests.swift */,
+				DC8DE24E2615F0B500C944C9 /* ResquestManagerTests.swift */,
 			);
 			path = desafio_iosTests;
 			sourceTree = "<group>";
@@ -204,9 +218,9 @@
 		DCC310FB26120FAA0018A4BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DC8DBAF82614BA7B00A9C154 /* NasaCell.swift */,
 				DCC310CB26120A890018A4BB /* NasaViewController.swift */,
 				DCC3110026124D710018A4BB /* StoryBoards */,
-				DC8DBAF82614BA7B00A9C154 /* NasaCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,8 +244,8 @@
 		DCC310FE26120FCE0018A4BB /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				DCC31130261260920018A4BB /* NasaAPI.swift */,
 				DC754A6026127FD70053A278 /* ImageAPI.swift */,
+				DCC31130261260920018A4BB /* NasaAPI.swift */,
 				DC2B791E26127AC300A3F0E9 /* NetworkManagers */,
 			);
 			path = Networking;
@@ -240,6 +254,8 @@
 		DCC310FF26120FD60018A4BB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DCC310C726120A890018A4BB /* AppDelegate.swift */,
+				DCC310C926120A890018A4BB /* SceneDelegate.swift */,
 				DC245F812613EAD900ECB690 /* ViewCode.swift */,
 			);
 			path = Common;
@@ -510,7 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC310DF26120A8A0018A4BB /* desafio_iosTests.swift in Sources */,
+				DC8DE24F2615F0B500C944C9 /* ResquestManagerTests.swift in Sources */,
 				DC245F5D2613ABCD00ECB690 /* DownloadTests.swift in Sources */,
 				DC245F622613B61A00ECB690 /* NasaViewModelTests.swift in Sources */,
 			);
