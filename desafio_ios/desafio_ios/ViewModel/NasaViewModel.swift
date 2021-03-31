@@ -73,12 +73,10 @@ class NasaViewModel {
                           Parameters.endDate.value : dateFormatter.string(from: endDate)]
         
         nasaAPI.getNasa(parameters: parameters) { [weak self] response in
-//            self?.dispathGroup.leave()
             self?.decreceDate()
-            completion(response)
+            completion(response.filter({ $0.media == "image" }))
         } completion: { (error) in
             debugPrint(error)
-//            self.dispathGroup.leave()
         }
     }
 }
@@ -108,5 +106,7 @@ extension NasaViewModel {
         dateFormatter.dateFormat = "YYYY-MM-dd"
         return dateFormatter.string(from: date)
     }
+    
+    
 }
 

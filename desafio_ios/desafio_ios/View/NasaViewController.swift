@@ -92,6 +92,7 @@ extension NasaViewController: ViewCoding {
         self.collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         self.collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         self.collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        print(self.view.bounds)
     }
     
     
@@ -99,6 +100,6 @@ extension NasaViewController: ViewCoding {
 
 extension NasaViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 155, height: 250)
+        return CGSize(width: (self.view.bounds.width / 2) - 10, height: (self.view.bounds.height / 2) - 30)
     }
 }

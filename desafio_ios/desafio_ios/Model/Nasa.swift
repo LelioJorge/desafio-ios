@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct Nasa: Decodable {
+struct Nasa: Codable {
     var date: String
     var title: String
     var url: String
+    var media: String
+    
+    private enum CodingKeys : String, CodingKey {
+        case media = "media_type", date, title, url
+        }
 }
